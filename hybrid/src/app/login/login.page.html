@@ -1,0 +1,44 @@
+
+<ion-content [fullscreen]="true" [scrollY]="false"  [scrollX]="false">
+  <div class="container-intro">
+    <ion-title>Bienvenido a CarpollApp</ion-title>
+    <h1>De una App a tu casa</h1>
+  <img
+    alt="rhino standing near grass"
+    src="https://i.pinimg.com/564x/d9/5c/d0/d95cd04d85043401df2b957eeba934cd.jpg"
+  />
+  </div>
+  <form action="">
+    <ion-item>
+      <ion-icon name="person-outline" ></ion-icon>
+      <ion-input
+        label="Usuario"
+        labelPlacement="stacked"
+        [clearInput]="true"
+        placeholder="Ingrese su usuario"
+         >
+    </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock-closed-outline" aria-label="Favorite"></ion-icon>
+      <ion-input type="password" label="Password" labelPlacement="stacked" placeholder="Ingresa tu password">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+   
+    </ion-item>
+    <div>
+      <a href="" style="color: skyblue;">Olvido su contrasenia</a>
+    </div>
+  </form>
+
+  <div id="container-button">
+    <ion-button shape="round" (click) = "navigateToHome()">Iniciar Sesion</ion-button>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" >
+    <ion-fab-button>
+       <ion-icon name="help-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

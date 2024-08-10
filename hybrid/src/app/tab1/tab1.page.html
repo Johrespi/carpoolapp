@@ -1,8 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <div class="container-header">
+      <ion-title>
+        Tab 1
+      </ion-title>
+  
+      <ion-title>
+        <a [routerLink]="['/login']">Logout</a>
+      </ion-title>
+    </div>
   </ion-toolbar>
 </ion-header>
 
