@@ -1,23 +1,64 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <div class="container-header">
+  <ion-toolbar color="secondary">
       <ion-title>
-        Tab 1
+        CarpoolApp
       </ion-title>
-  
-      <ion-title>
-        <a [routerLink]="['/']">Logout</a>
-      </ion-title>
-    </div>
+      <ion-icon name="ticket-outline" slot="end"></ion-icon>
+      <ion-badge id="reservas-badge-msg" color="danger">2</ion-badge>
+      <ion-icon name="log-in-outline" slot="end" (click)="navigateToLandingLogin()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+      @for (carpool of carpools; track carpool.id) {
+        <div class="upperBox">
+ 
+          <div class="image">
+            <img src="{{carpool.image_car}}" alt="">
+          </div>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+          <div class="model">
+            <h3>{{carpool.model}}</h3>
+           </div>
+
+          <div class="title">
+           <h3>{{carpool.name_owner}}</h3>
+          </div>
+
+          <div class="amount">
+            
+            <h3>  <ion-icon name="cash-outline"></ion-icon>  {{carpool.price}}</h3>
+          </div>
+
+          <div class="status">
+            <ion-button  size="small" color="success">Ver
+              <ion-icon slot="start" name="eye-outline"></ion-icon>
+            </ion-button>
+          </div>
+          
+          
+          <div class="quotas">
+            <h3> <ion-icon name="people-outline"></ion-icon> {{carpool.quotas}}</h3>
+          </div>
+
+
+          <div class="reservation">
+            <ion-button  size="small" color="success">Reservar</ion-button>
+          </div>
+
+          <div class="destiny">
+            @for (destiny of carpool.destiny; track $index) 
+            {
+              <span class="route-tag">{{destiny}}</span>
+            }
+          </div>
+
+        </div>
+  
+      }
+  
+
+  
+
 </ion-content>

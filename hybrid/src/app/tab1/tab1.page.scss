@@ -1,14 +1,116 @@
-
-.container-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 16px; 
+ion-header {
+  ion-icon {
+    font-size: 30px;
+    position: relative;
+    margin-right: 10px;
+  } 
 }
 
-.container-header ion-title:first-child {
-    margin-right: 80px; /* Empuja el primer título hacia la izquierda */
+#reservas-badge-msg {
+  background-color : black !important;
+  position : absolute;
+  top: 5px;
+  right : 70px;
+  color: #fff;
+  z-index: 111;
+}
+
+.upperBox {
+  background-color: #fff;
+  margin:10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  box-shadow: black 1.95px 1.95px 2.6px;
+  height: auto;
+  display: grid;
+  grid-template-areas : 
+  "image model model model" 
+  "image title title title" 
+  "image amount amount status" 
+  "image quotas quotas reservation"
+  "destiny destiny destiny destiny"; /* Nueva área para las rutas */
+  border-radius: 5px;
+}
+
+
+.image {
+  grid-area: image;
+  img {
+    padding : 5px;
+    border-radius : 50px;
+    height: 150px;
+    width: 100%;
+    
   }
   
-  .container-header ion-title:last-child {
-    margin-left: 70px; /* Empuja el segundo título hacia la derecha */
+}
+.model {
+  grid-area: model;
+  color: black;
+  margin-top: -20px;
+  h3 {
+   // margin-top: 2px;
+    font-size: 20px;
   }
+}
+.title {
+  margin-top: -35px;
+  margin-bottom: 10px;
+  grid-area: title;
+  color : rgb(48, 159, 202)
+}
+
+.title > h3 {
+//  margin-top: 5px;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.amount {
+  grid-area: amount;
+  margin-top: -20px;
+
+  h3 {
+    color: green;
+  }
+}
+
+.quotas {
+  margin-top: -10px;
+  grid-area: quotas;
+  h3 {
+    margin-top: -5px;
+    color: blue;
+  }
+}
+
+.status {
+  grid-area: status;
+  margin-left: 30px;
+  p {
+    color: green;
+  }
+}
+
+.reservation {
+  grid-area: reservation;
+}
+
+.destiny {
+  grid-area: destiny;
+  margin-top: 10px;
+}
+
+.route-tag {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 14px;
+}
