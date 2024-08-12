@@ -35,6 +35,49 @@ export class Tab1Page {
         model: 'Chevrolet Family ',
         quotas : 4,
         destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
+      },{
+        id: 3,
+        name_owner: "Johan Ramirez",
+        image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
+        price: 1.50,
+        model: 'Chevrolet Family ',
+        quotas : 4,
+        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
+      },{
+        id: 4,
+        name_owner: "Johan Ramirez",
+        image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
+        price: 1.50,
+        model: 'Chevrolet Family ',
+        quotas : 4,
+        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
+      }
+      ,{
+        id: 5,
+        name_owner: "Johan Ramirez",
+        image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
+        price: 1.50,
+        model: 'Chevrolet Family ',
+        quotas : 4,
+        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
+      }
+      ,{
+        id: 6,
+        name_owner: "Johan Ramirez",
+        image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
+        price: 1.50,
+        model: 'Chevrolet Family ',
+        quotas : 4,
+        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
+      }
+      ,{
+        id: 7,
+        name_owner: "Johan Ramirez",
+        image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
+        price: 1.50,
+        model: 'Chevrolet Family ',
+        quotas : 4,
+        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
       }
   ]
 
