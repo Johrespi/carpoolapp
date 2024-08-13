@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Acerca de 
+      Acerca de CarpooolApp
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,9 +19,16 @@
     </ion-card-header>
 
     <ion-card-content>
-      <p id="descripcion">
-        Una aplicación móvil desarrollada en Angular Ionic es un software multiplataforma que utiliza el framework Angular para construir la lógica y la estructura de la aplicación, junto con el framework Ionic para crear una interfaz de usuario atractiva y funcional. Ionic proporciona componentes y herramientas para diseñar aplicaciones que se sienten y se ven nativas en dispositivos iOS y Android. La aplicación se puede desplegar tanto en la web como en tiendas de aplicaciones móviles. Utiliza tecnologías web como HTML, CSS y JavaScript, lo que facilita la reutilización de código y la implementación rápida.
+      <p id="descripcion">       
+        CarpoolApp es una aplicación para la comunidad de la ESPOL que permite registrar y reservar autos que realizan recorridos desde y hacia la universidad. Los usuarios pueden encontrar vehículos disponibles para compartir viajes desde sus casas a la universidad y viceversa, con la seguridad de viajar con otros miembros de la comunidad. La aplicación facilita la búsqueda de rutas, reserva de cupos, y contribuye a reducir los costos y el impacto ambiental al fomentar el uso compartido de autos entre los politécnicos.
       </p>
     </ion-card-content>
   </ion-card>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end"  >
+    <ion-fab-button (click)="openChatWhatsAppSupportCarpooolApp()"> 
+      <ion-icon size="large" color="success" name="logo-whatsapp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

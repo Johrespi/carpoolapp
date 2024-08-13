@@ -25,7 +25,14 @@ export class Tab1Page {
         price: 1.50,
         quotas : 4,
         model: 'Kia 2019 Blanco',
-        destiny: ['Mucho Lote 2','Metropolis']
+        destiny: ['Mucho Lote 2','Metropolis'],
+        note: `Mañana salgo para la ESPOL para entrada de las 7:00am
+              Paso por: 
+              - Mucho lote 2
+              - Metrópolis 2
+              Precio: $1.50
+              4 cupo disponible`,
+        phone : '593994563180'
       },
       {
         id: 2,
@@ -34,51 +41,53 @@ export class Tab1Page {
         price: 1.50,
         model: 'Chevrolet Family ',
         quotas : 4,
-        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
-      },{
+        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur'],
+        note: `Mañana salgo para la ESPOL para entrada de las 7:00am
+              Paso por: 
+              - Sur
+              - Chongon
+              - Via la Costa
+              - Mall del Sur
+              Precio: $1.50
+              4 cupo disponible`,
+        phone : '593994563180'
+      },
+      {
         id: 3,
-        name_owner: "Johan Ramirez",
+        name_owner: "Carlos Lopez",
         image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
-        price: 1.50,
-        model: 'Chevrolet Family ',
-        quotas : 4,
-        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
-      },{
+        price: 2,
+        model: 'Toyota Corolla',
+        quotas: 3,
+        destiny: ['Centro', 'Norte', 'Kennedy', 'Plaza Lagos'],
+        note: `Mañana salgo para la ESPOL para entrada de las 7:00am
+              Paso por: 
+              - Cento
+              - Norte
+              - Kennedy
+              - Plaza Lagos
+              Precio: $2.00
+              4 cupo disponible`,
+        phone : '593994563180'
+      },
+      {
         id: 4,
-        name_owner: "Johan Ramirez",
+        name_owner: "Maria Fernandez",
         image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
-        price: 1.50,
-        model: 'Chevrolet Family ',
-        quotas : 4,
-        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
-      }
-      ,{
-        id: 5,
-        name_owner: "Johan Ramirez",
-        image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
-        price: 1.50,
-        model: 'Chevrolet Family ',
-        quotas : 4,
-        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
-      }
-      ,{
-        id: 6,
-        name_owner: "Johan Ramirez",
-        image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
-        price: 1.50,
-        model: 'Chevrolet Family ',
-        quotas : 4,
-        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
-      }
-      ,{
-        id: 7,
-        name_owner: "Johan Ramirez",
-        image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
-        price: 1.50,
-        model: 'Chevrolet Family ',
-        quotas : 4,
-        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur']
-      }
+        price: 1.75,
+        model: 'Honda Civic',
+        quotas: 5,
+        destiny: ['Sauces', 'Alborada', 'Urdesa', 'Mall del Sol'],
+        note: `Mañana salgo para la ESPOL para entrada de las 7:00am
+              Paso por: 
+              - Sauces
+              - Alborada
+              - Urdesa
+              - Mall del Sol
+              Precio: $1.70
+              4 cupo disponible`,
+        phone : '593994563180'
+      },
   ]
 
 

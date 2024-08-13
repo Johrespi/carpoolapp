@@ -9,9 +9,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="dark" [fullscreen]="true">
+<ion-content  [fullscreen]="true">
   
       @for (carpool of carpools; track carpool.id) {
+
         <div class="upperBox">
  
           <div class="image">
@@ -28,11 +29,11 @@
 
           <div class="amount">
             
-            <h3>  <ion-icon name="cash-outline"></ion-icon>  {{carpool.price}}</h3>
+            <h3>  <ion-icon name="cash-outline"></ion-icon>  {{carpool.price.toFixed(2)}}</h3>
           </div>
 
           <div class="status">
-            <ion-button  size="small" color="success">Ver
+            <ion-button  shape="round" color="primary" size="small" >Ver
               <ion-icon slot="start" name="eye-outline"></ion-icon>
             </ion-button>
           </div>
@@ -44,7 +45,7 @@
 
 
           <div class="reservation">
-            <ion-button  size="small" color="success">Reservar</ion-button>
+            <ion-button  shape="round" size="small" color="success">Reservar</ion-button>
           </div>
 
           <div class="destiny">
