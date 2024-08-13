@@ -1,0 +1,71 @@
+
+@import '@ionic/angular/css/palettes/dark.always.css';
+ion-header {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.container-intro {
+    display:flex;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 40px;
+  }
+
+.container-intro > h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.container-intro > img {
+    align-items: center;
+    width: 240px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+ion-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    padding: 0; /* Elimina el padding si es necesario */
+  }
+
+ion-icon {
+    color: rgb(0, 0, 0);
+}
+ion-item {
+    margin: 10px;
+    --background:white;
+    border-radius: 10px;
+    color: black;
+}
+
+ion-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+a {
+
+    font-style: italic;
+    margin-left: 15px;
+}
+
+#container-button {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+   
+  }
+ion-button {
+    --background : skyblue;
+    
+  }
+  

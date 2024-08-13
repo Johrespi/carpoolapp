@@ -1,0 +1,73 @@
+ion-content {
+    --background : rgb(167, 215, 234);
+}
+ion-title {
+    color: black;
+}
+.container-intro {
+    display:flex;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 40px;
+  }
+
+  .container-intro > img {
+    margin-top: 30px;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+p {
+    color: black;
+    font-style: italic;
+    font-size: smaller;
+    text-align: center;
+}
+
+ion-icon {
+    color: rgb(255, 255, 255);
+}
+
+.login-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre las tarjetas */
+    padding: 20px; /* Espacio alrededor de las tarjetas */
+  }
+  
+.login-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    width: 250px; /* Ancho de la tarjeta */
+    margin: 0 auto; /* Centrar la tarjeta horizontalmente */
+}
+  
+.card-icon {
+    font-size: 40px; /* Tamaño del ícono */
+    margin-bottom: 10px; /* Espacio entre el ícono y el texto */
+}
+  
+ion-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.texto-login {
+    font-size: 18px; /* Tamaño del texto */
+    color: white
+}
+
+.text1 {
+    font-size: 35px;
+    font-weight: 200;
+}
+
+@import '@ionic/angular/css/palettes/dark.always.css';
