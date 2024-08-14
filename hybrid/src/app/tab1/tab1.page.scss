@@ -7,6 +7,10 @@ ion-header {
   } 
 }
 
+
+ion-content {
+  --background: #112d40
+}
 #reservas-badge-msg {
   background-color : black !important;
   position : absolute;
@@ -17,7 +21,7 @@ ion-header {
 }
 
 .upperBox {
-  background-color: #fff;
+  background-color: #fafcfc;
   margin:10px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -91,6 +95,9 @@ ion-header {
 .status {
   grid-area: status;
   margin-left: 30px;
+  ion-button {
+    --background : #1c9099
+  }
   p {
     color: green;
   }

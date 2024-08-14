@@ -1,8 +1,11 @@
+
+
+
 ion-content {
-    --background : rgb(167, 215, 234);
+    --background : #112d40;
 }
 ion-title {
-    color: black;
+    color:#fafcfc
 }
 .container-intro {
     display:flex;
@@ -21,7 +24,7 @@ ion-title {
 }
 
 p {
-    color: black;
+    color: #fafcfc;
     font-style: italic;
     font-size: smaller;
     text-align: center;
@@ -39,6 +42,7 @@ ion-icon {
   }
   
 .login-card {
+    --background: #1c9099;
     display: flex;
     flex-direction: column;
     align-items: center;

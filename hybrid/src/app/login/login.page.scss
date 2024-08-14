@@ -1,11 +1,20 @@
 
 @import '@ionic/angular/css/palettes/dark.always.css';
+
+:root {
+    --primary : #112d40
+    --secondary : #fafcfc
+    --terciary: #7bb9d1
+    --fourth :#1c9099
+}
 ion-header {
     margin-top: 30px;
     text-align: center;
 }
 
-
+ion-content {
+    --background:#112d40
+}
 .container-intro {
     display:flex;
     flex-direction: column;
@@ -18,6 +27,7 @@ ion-header {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 30px;
+    color:#fafcfc
 }
 
 .container-intro > img {
@@ -49,6 +59,7 @@ ion-item {
 ion-title {
     font-size: 1.5em;
     font-weight: bold;
+    color : #fafcfc
 }
 
 a {
@@ -65,7 +76,10 @@ a {
    
   }
 ion-button {
-    --background : skyblue;
+    --background : #1c9099;
     
   }
   
+ion-fab-button {
+    --background : #1c9099;
+}

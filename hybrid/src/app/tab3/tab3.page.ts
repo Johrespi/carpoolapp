@@ -17,8 +17,8 @@ export class Tab3Page {
 
 
   openChatWhatsAppSupportCarpooolApp(){
-    const phoneNumber : string = '593959568461';
-    const message = "Hola tengo dudas acerca de la app";
+    const phoneNumber : string = '593994563180';
+    const message = "";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   }
