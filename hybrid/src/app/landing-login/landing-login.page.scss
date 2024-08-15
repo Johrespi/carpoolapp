@@ -66,12 +66,14 @@ ion-card-content {
 
 .texto-login {
     font-size: 18px; /* Tamaño del texto */
-    color: white
+    color: white;
+    font-family: var(--ion-font-family-primary);
 }
 
 .text1 {
     font-size: 35px;
-    font-weight: 200;
+    font-weight: 500;
+    font-family: var(--ion-font-family-primary);
 }
 
 @import '@ionic/angular/css/palettes/dark.always.css';

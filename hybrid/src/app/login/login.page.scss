@@ -1,12 +1,16 @@
 
 @import '@ionic/angular/css/palettes/dark.always.css';
 
+
+
 :root {
     --primary : #112d40
     --secondary : #fafcfc
     --terciary: #7bb9d1
     --fourth :#1c9099
 }
+
+
 ion-header {
     margin-top: 30px;
     text-align: center;
@@ -21,9 +25,12 @@ ion-content {
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     margin-top: 40px;
+    font-family: var(--ion-font-family-primary);
+
   }
 
 .container-intro > h1 {
+
     text-align: center;
     margin-top: 20px;
     margin-bottom: 30px;
@@ -31,6 +38,7 @@ ion-content {
 }
 
 .container-intro > img {
+  
     align-items: center;
     width: 240px;
     height: 200px;
@@ -44,6 +52,7 @@ ion-content {
     justify-content: center; /* Centra el contenido verticalmente */
     align-items: center; /* Centra el contenido horizontalmente */
     padding: 0; /* Elimina el padding si es necesario */
+    
   }
 
 ion-icon {

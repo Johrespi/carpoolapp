@@ -1,1 +1,15 @@
+.label {
+    color: var(--ion-color-blue);
+}
 
+ion-fab-button {
+    --background: white;
+
+}
+
+
+ion-icon,
+ion-label {
+    color: gray;
+    /* Aplica el color azul a todos los íconos y etiquetas */
+}
