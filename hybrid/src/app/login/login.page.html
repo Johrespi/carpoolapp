@@ -4,8 +4,8 @@
     <ion-title>Bienvenido a CarpolApp</ion-title>
     <h1>De una App a tu casa</h1>
   <img
-    alt="rhino standing near grass"
-    src="https://i.pinimg.com/564x/d9/5c/d0/d95cd04d85043401df2b957eeba934cd.jpg"
+    alt="logo"
+    src="assets/tortuga-logo.jpeg"
   />
   </div>
   <form action="">
@@ -21,29 +21,30 @@
     </ion-item>
     <ion-item>
       <ion-icon name="lock-closed-outline" aria-label="Favorite"></ion-icon>
-      <ion-input type="password" label="Password" labelPlacement="stacked" placeholder="Ingresa tu password">
+      <ion-input type="password" label="Password" labelPlacement="stacked" placeholder="Ingrese su contraseña">
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
    
     </ion-item>
-    <div>
-      <a href="" style="color: skyblue;">Olvido su contrasenia</a>
+    <div class="container-links">
+      <a href="#" style="color: var(--ion-color-tertiary);">Olvidó su contraseña?</a>
+      <a href="#" class="register-link" style="color: var(--ion-color-tertiary);">Registrarse</a>
     </div>
   </form>
 
   <div id="container-button">
-    <ion-button shape="round" (click) = "navigateToHome()">Iniciar Sesion</ion-button>
+    <ion-button shape="round" (click) = "navigateToHome()">Iniciar Sesión</ion-button>
   </div>
 
   <ion-fab slot="fixed" vertical="bottom" horizontal="end" >
     <ion-fab-button>
-       <ion-icon name="help-outline"></ion-icon>
+       <ion-icon name="help-outline" color="white"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
   <ion-fab slot="fixed" vertical="bottom" horizontal="start" (click) = " navigateToStart()" >
     <ion-fab-button>
-      <ion-icon name="arrow-undo-outline"></ion-icon>
+      <ion-icon name="arrow-undo-outline" color="white"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
