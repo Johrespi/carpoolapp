@@ -27,8 +27,8 @@
    
     </ion-item>
     <div class="container-links">
-      <a href="#" style="color: var(--ion-color-tertiary);">Olvidó su contraseña?</a>
-      <a href="#" class="register-link" style="color: var(--ion-color-tertiary);">Registrarse</a>
+      <a style="color: var(--ion-color-tertiary);">Olvidó su contraseña?</a>
+      <a class="register-link" style="color: var(--ion-color-tertiary);"  (click) = "navigateToRegister()">Registrarse</a>
     </div>
   </form>
 
@@ -42,7 +42,7 @@
     </ion-fab-button>
   </ion-fab>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="start" (click) = " navigateToStart()" >
+  <ion-fab slot="fixed" vertical="bottom" horizontal="start" (click) = "navigateToStart()" >
     <ion-fab-button>
       <ion-icon name="arrow-undo-outline" color="white"></ion-icon>
     </ion-fab-button>
