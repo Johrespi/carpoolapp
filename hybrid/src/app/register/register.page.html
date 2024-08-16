@@ -62,4 +62,16 @@
       <ion-button shape="round" expand="block" type="submit" [disabled]="!registerForm.valid">Registrarse</ion-button>
     </div>
   </form>
+
+
+  
+  <ion-fab slot="fixed" vertical="bottom" horizontal="start" (click) = "navigateToLogin()" >
+    <ion-fab-button>
+      <div class="backto">
+      <ion-icon name="arrow-undo-outline" color="white"></ion-icon>
+      </div>
+    </ion-fab-button>
+  </ion-fab>
+
+
 </ion-content>

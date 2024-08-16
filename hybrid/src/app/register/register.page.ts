@@ -32,6 +32,10 @@ export class RegisterPage implements OnInit {
     });
   }
 
+  navigateToLogin(){
+    this.router.navigate(['/login']);
+  }
+
   onRegister() {
     if (this.registerForm.valid) {
       // Handle registration logic here
