@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{ carpool.model }}</ion-title>
+    <ion-button slot="end" (click)="closeOverlay()">Cerrar</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-thumbnail>
+      <img [src]="carpool.image_car" alt="Car Image">
+    </ion-thumbnail>
+    <ion-card-header>
+      <ion-card-title>{{ carpool.name_owner }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Precio: {{ carpool.price.toFixed(2) }}</p>
+      <p>Cupos: {{ carpool.quotas }}</p>
+      <p>Destino: {{ carpool.destiny.join(', ') }}</p>
+      <p>Teléfono: {{ carpool.phone }}</p>
+      <p>Notas: {{ carpool.note }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

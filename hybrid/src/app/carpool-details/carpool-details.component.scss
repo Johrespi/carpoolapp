@@ -1,0 +1,72 @@
+
+ion-header {
+    --background: #3880ff; 
+    --color: white; 
+    ion-toolbar {
+      //--padding-start: 16px; 
+      --padding-end: 16px; 
+      ion-title {
+        font-size: 1.2rem; 
+      }
+      ion-button {
+        --color: white; 
+        --background: transparent; 
+        --border: none; 
+        font-size: 1rem; 
+      }
+    }
+  }
+  
+  ion-content {
+    --background: var(--ion-color-primary); 
+    padding: 16px;
+  
+    ion-card {
+
+      border-radius: 8px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      overflow: hidden; 
+      
+      ion-thumbnail {
+        display: flex; /* Usa flexbox para centrar la imagen */
+        border-radius: 8px 8px 0 0; 
+        justify-content: center; /* Centra la imagen horizontalmente */
+        align-items: center; /* Centra la imagen verticalmente (si es necesario) */
+        width: 100%; /* Asegura que el thumbnail ocupe todo el ancho del card */
+        height: 200px; /* Ajusta la altura del thumbnail */
+        //background: red; /* Fondo para ver el tamaño del contenedor */
+    
+        img {
+          width: 100%;
+          height: auto; 
+          border-bottom: 1px solid #ddd; 
+          
+        }
+      }
+
+      
+      
+      ion-card-header {
+        background: #3880ff; 
+        color: white; 
+        padding: 16px; 
+        
+        ion-card-title {
+          font-size: 1.4rem; 
+          font-weight: bold; 
+          text-align: center;
+          
+        }
+      }
+  
+      ion-card-content {
+        padding: 16px; /* Espacio interno del contenido del card */
+        p {
+          margin-bottom: 12px; /* Espacio debajo de cada párrafo */
+          font-size: 1rem; /* Tamaño del texto de los párrafos */
+          color: white; 
+          line-height: 1.5; /* Altura de línea para mejor legibilidad */
+        }
+      }
+    }
+  }

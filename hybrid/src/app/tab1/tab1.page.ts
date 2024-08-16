@@ -6,13 +6,16 @@ import { addIcons } from 'ionicons';
 import * as allIcons from 'ionicons/icons'
 import { CarpoolData } from '../interfaces/carpool-data';
 import { CameraResultType } from '@capacitor/camera';
+import { CarpoolDetailsComponent } from '../carpool-details/carpool-details.component';
+import { ModalController } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent,RouterLink,IonButton,IonButtons,IonIcon,IonBadge,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonRow,IonCol,IonLabel,IonList,IonItem,IonCardContent,IonText]
+  imports: [IonicModule, ExploreContainerComponent,RouterLink,IonButtons,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonRow,IonCol,IonLabel,IonList,IonItem,IonCardContent,IonText]
 })
 export class Tab1Page {
 
@@ -91,11 +94,21 @@ export class Tab1Page {
   ]
 
 
-  constructor(private router : Router) {
+  constructor(private router : Router, private modalController: ModalController) {
     addIcons(allIcons)
   }
 
   navigateToLandingLogin(){
     this.router.navigate(['/landing-login']);
   }
+
+
+  async openCarpoolDetails(carpool: CarpoolData) {
+    const modal = await this.modalController.create({
+      component: CarpoolDetailsComponent,
+      componentProps: { carpool }
+    });
+    return await modal.present();
+  }
+
 }
