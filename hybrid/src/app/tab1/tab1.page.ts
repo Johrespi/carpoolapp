@@ -12,7 +12,6 @@ import { IonicModule } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
 import { CarpoolService } from '../services/carpool.service';
 import { MesssageDetailsComponent } from '../messsage-details/messsage-details.component';
-import { BuscadorComponent } from '../buscador/buscador.component';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -20,7 +19,7 @@ import { NgIf } from '@angular/common';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonicModule, ExploreContainerComponent,RouterLink,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonCol,IonLabel,IonList,IonCardContent,IonText, BuscadorComponent, NgIf]
+  imports: [IonicModule, ExploreContainerComponent,RouterLink,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonCol,IonLabel,IonList,IonCardContent,IonText, NgIf]
 })
 export class Tab1Page {
   
