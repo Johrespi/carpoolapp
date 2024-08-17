@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-buttons slot="primary">
-      <ion-button>
+    <ion-buttons slot="primary" *ngIf="!openSearchBar">
+      <ion-button (click)="setOpenSearchBar(true)">
         <ion-icon name="search-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
 
-    <ion-buttons slot="primary">
+    <ion-buttons slot="primary" *ngIf="!openSearchBar">
       <ion-button (click)="navigateToLandingLogin()">
         <ion-icon name="log-in-outline"></ion-icon>
       </ion-button>
@@ -19,9 +19,12 @@
       </ion-button>
     </ion-buttons>
 
-    <ion-title>
+    <ion-title *ngIf="!openSearchBar">
       CarpoolApp
     </ion-title>
+
+    
+      <ion-searchbar (ionCancel)="setOpenSearchBar(false)" show-cancel-button="always" placeholder="Buscar por destinos" *ngIf="openSearchBar"></ion-searchbar>    
   </ion-toolbar>
 </ion-header>
 

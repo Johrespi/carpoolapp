@@ -13,19 +13,21 @@ import { NavigationExtras } from '@angular/router';
 import { CarpoolService } from '../services/carpool.service';
 import { MesssageDetailsComponent } from '../messsage-details/messsage-details.component';
 import { BuscadorComponent } from '../buscador/buscador.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonicModule, ExploreContainerComponent,RouterLink,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonRow,IonCol,IonLabel,IonList,IonCardContent,IonText, BuscadorComponent]
+  imports: [IonicModule, ExploreContainerComponent,RouterLink,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonCol,IonLabel,IonList,IonCardContent,IonText, BuscadorComponent, NgIf]
 })
 export class Tab1Page {
   
   public  mensajeUsuario :string='';
   public  countReservations : number = 0;
   public carpools : CarpoolData[] = []
+  public openSearchBar: boolean = false
 
 
   constructor(private router : Router, private modalController: ModalController,private carpoolService : CarpoolService) {
@@ -81,6 +83,10 @@ export class Tab1Page {
 
   incrementReservationsToday(){
     this.countReservations++;
+  }
+
+  setOpenSearchBar(value: boolean) {
+    this.openSearchBar = value
   }
 
   
