@@ -12,13 +12,14 @@ import { IonicModule } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
 import { CarpoolService } from '../services/carpool.service';
 import { MesssageDetailsComponent } from '../messsage-details/messsage-details.component';
+import { BuscadorComponent } from '../buscador/buscador.component';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonicModule, ExploreContainerComponent,RouterLink,IonButtons,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonRow,IonCol,IonLabel,IonList,IonItem,IonCardContent,IonText]
+  imports: [IonicModule, ExploreContainerComponent,RouterLink,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonRow,IonCol,IonLabel,IonList,IonCardContent,IonText, BuscadorComponent]
 })
 export class Tab1Page {
 
