@@ -46,9 +46,15 @@
           </div>
 
 
-          <div class="reservation">
-            <ion-button (click)="openMessageModal(carpool)"  shape="round" size="small" color="success" >Reservar</ion-button>
-          </div>
+          @if(carpool.quotas>0){
+            <div class="reservation">
+              <ion-button (click)="openMessageModal(carpool)"  shape="round" size="small" color="success" >Reservar</ion-button>
+            </div>
+          }@else{
+            <div class="reservation">
+              <ion-button shape="round" size="small" color="danger" >No cupos</ion-button>
+            </div>
+          }
 
           <div class="destiny">
             @for (destiny of carpool.destiny; track $index) 

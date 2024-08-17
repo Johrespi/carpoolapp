@@ -21,7 +21,7 @@ import { MesssageDetailsComponent } from '../messsage-details/messsage-details.c
   imports: [IonicModule, ExploreContainerComponent,RouterLink,IonButtons,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonRow,IonCol,IonLabel,IonList,IonItem,IonCardContent,IonText]
 })
 export class Tab1Page {
-
+  
   public  mensajeUsuario :string='';
   public  countReservations : number = 0;
   public carpools : CarpoolData[] = []
@@ -29,7 +29,6 @@ export class Tab1Page {
 
   constructor(private router : Router, private modalController: ModalController,private carpoolService : CarpoolService) {
     this.carpools = this.carpoolService.getCarpools();
-    this.countReservations = this.carpoolService.getReservationsCarpool().length;
     addIcons(allIcons)
   }
 
@@ -41,7 +40,7 @@ export class Tab1Page {
   async openCarpoolDetails(carpool: CarpoolData) {
     const modal = await this.modalController.create({
       component: CarpoolDetailsComponent,
-      componentProps: { carpool }
+      componentProps: { carpool ,parentPage : this }
     });
     return await modal.present();
   }
@@ -49,7 +48,6 @@ export class Tab1Page {
 
   public reservarCarpool(carpool: CarpoolData,message:string){
       this.openChatWhatsAppCarpooolApp(carpool.phone,message)
-     
       this.carpoolService.reservation(carpool)
       this.countReservations = this.carpoolService.getReservationsCarpool().length;
   }
@@ -77,6 +75,11 @@ export class Tab1Page {
   openChatWhatsAppCarpooolApp(phoneNumber: string,message: string){
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
+  }
+
+
+  incrementReservationsToday(){
+    this.countReservations++;
   }
 
   
