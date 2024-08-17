@@ -1,0 +1,32 @@
+/*
+    El azulito marino : #112d40
+    El blanco : #112d40
+    El celestito : #7bb9d1
+    El verdesito : #1c9099 
+    */
+ion-header{
+    ion-tittle {
+       // margin-left: 20px;
+    }
+}
+ion-content {
+    --background : #112d40;
+    ion-title {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+  
+}
+
+ion-textearea {
+    div {
+        color: white;
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Espacio arriba del botón, ajusta según sea necesario */
+  }
+

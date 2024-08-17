@@ -4,15 +4,17 @@
         CarpoolApp
       </ion-title>
       <ion-icon name="ticket-outline" slot="end"></ion-icon>
-      <ion-badge id="reservas-badge-msg" color="danger">2</ion-badge>
+      <ion-badge id="reservas-badge-msg" color="danger">{{this.countReservations}}</ion-badge>
       <ion-icon name="log-in-outline" slot="end" (click)="navigateToLandingLogin()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content  [fullscreen]="true">
+   
   
       @for (carpool of carpools; track carpool.id) {
-
+       
         <div class="upperBox">
  
           <div class="image">
@@ -45,7 +47,7 @@
 
 
           <div class="reservation">
-            <ion-button  shape="round" size="small" color="success">Reservar</ion-button>
+            <ion-button (click)="openMessageModal(carpool)"  shape="round" size="small" color="success" >Reservar</ion-button>
           </div>
 
           <div class="destiny">

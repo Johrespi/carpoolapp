@@ -12,7 +12,8 @@ ion-header {
         --color: white; 
         --background: transparent; 
         --border: none; 
-        font-size: 1rem; 
+         font-size: 1rem; 
+         
       }
     }
   }
@@ -69,4 +70,15 @@ ion-header {
         }
       }
     }
+  }
+
+  .center-buton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  ion-button {
+    text-align: center;
   }

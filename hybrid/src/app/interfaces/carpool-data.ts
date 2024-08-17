@@ -9,3 +9,12 @@ export interface CarpoolData{
     note : string
     phone : string;
 }
+
+
+export interface CarpoolDataReservation {
+    id : number;
+    name_owner : string;
+    image_car? : string;
+    phone : string;
+    dateCreation : string;
+}

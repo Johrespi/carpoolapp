@@ -1,0 +1,40 @@
+/*
+    El azulito marino : #112d40
+    El blanco : #112d40
+    El celestito : #7bb9d1
+    El verdesito : #1c9099 
+    */
+ion-item {
+    margin-top: 2px;
+}
+ion-list {
+ --background: white; // Asegúrate de que el fondo sea transparente
+
+}
+
+ion-content {
+    --background : #112d40;
+    .top {
+        padding-top: 10px;
+        background-color: white;
+        box-shadow: rgba(0,0,0,0.15) 1.95px 1.95px 2.6px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom : 20px;
+    }
+    ion-segment {
+        margin-top: 10px;
+        border: 1px solid #1c9099 ;
+        ion-segment-button {
+            --background-checked : #1c9099;
+            --color-checked : white
+            --indicator-color : #1c9099
+            font-size : 18px
+            --color : #1c9099
+        }
+    }
+}

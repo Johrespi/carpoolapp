@@ -3,6 +3,7 @@ import {    IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardConten
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { addIcons } from 'ionicons';
 import * as allIcons from 'ionicons/icons';
+
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -17,8 +18,8 @@ export class Tab3Page {
 
 
   openChatWhatsAppSupportCarpooolApp(){
-    const phoneNumber : string = '593994563180';
-    const message = "";
+    const phoneNumber: string = "593994563180";
+    const message = "Donde te recojo 👋";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   }

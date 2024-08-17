@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button color="medium" color="danger" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Bienvenido</ion-title>
+   
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-title>¿Donde quieres ser recogido?</ion-title>
+  <ion-item>
+    <ion-textarea [counter]="true" [(ngModel)]="message" maxlength="200" labelPlacement="floating"   style="min-height: 150px; max-height: 300px;"  placeholder="Donde quieres ir">
+      <div slot="label">
+        <p style="margin: 0px; padding: 0px; color: white;">Commentario</p>
+        <ion-text color="danger">(Required)</ion-text>
+      </div>
+    </ion-textarea>
+  </ion-item>
+
+  <div class="button-container">
+    <ion-button color="success" (click)="canDismiss()" shape="round">Realizar Reserva</ion-button>
+  </div>
+</ion-content>

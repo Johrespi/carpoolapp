@@ -20,5 +20,14 @@
       <p>Teléfono: {{ carpool.phone }}</p>
       <p>Notas: {{ carpool.note }}</p>
     </ion-card-content>
+
+    <div class="center-buton">
+      <ion-button (click)="canDismiss()" shape="round" color="success" >
+        <ion-icon name="car-outline"></ion-icon>
+        Reservar
+      </ion-button>
+    </div>
   </ion-card>
+
+
 </ion-content>

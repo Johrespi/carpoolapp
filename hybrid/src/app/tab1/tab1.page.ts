@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent ,IonButton,IonButtons,IonIcon,IonBadge,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonRow,IonCol,IonLabel,IonList,IonItem,IonCardContent,IonText} from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { RouterLink,Router } from '@angular/router';
@@ -9,6 +9,9 @@ import { CameraResultType } from '@capacitor/camera';
 import { CarpoolDetailsComponent } from '../carpool-details/carpool-details.component';
 import { ModalController } from '@ionic/angular';
 import { IonicModule } from '@ionic/angular';
+import { NavigationExtras } from '@angular/router';
+import { CarpoolService } from '../services/carpool.service';
+import { MesssageDetailsComponent } from '../messsage-details/messsage-details.component';
 
 @Component({
   selector: 'app-tab1',
@@ -19,82 +22,14 @@ import { IonicModule } from '@ionic/angular';
 })
 export class Tab1Page {
 
-
-  public carpools : CarpoolData[] = [
-      {
-        id: 1,
-        name_owner: "Cristhian Santacruz",
-        image_car: 'https://i.pinimg.com/564x/e4/ef/3f/e4ef3f9a7531d5ee6153794200e7a01f.jpg',
-        price: 1.50,
-        quotas : 4,
-        model: 'Kia 2019 Blanco',
-        destiny: ['Mucho Lote 2','Metropolis'],
-        note: `Mañana salgo para la ESPOL para entrada de las 7:00am
-              Paso por: 
-              - Mucho lote 2
-              - Metrópolis 2
-              Precio: $1.50
-              4 cupo disponible`,
-        phone : '593994563180'
-      },
-      {
-        id: 2,
-        name_owner: "Johan Ramirez",
-        image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
-        price: 1.50,
-        model: 'Chevrolet Family ',
-        quotas : 4,
-        destiny: ['Sur','Chongon','Via la Costa','Mall del Sur'],
-        note: `Mañana salgo para la ESPOL para entrada de las 7:00am
-              Paso por: 
-              - Sur
-              - Chongon
-              - Via la Costa
-              - Mall del Sur
-              Precio: $1.50
-              4 cupo disponible`,
-        phone : '593994563180'
-      },
-      {
-        id: 3,
-        name_owner: "Carlos Lopez",
-        image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
-        price: 2,
-        model: 'Toyota Corolla',
-        quotas: 3,
-        destiny: ['Centro', 'Norte', 'Kennedy', 'Plaza Lagos'],
-        note: `Mañana salgo para la ESPOL para entrada de las 7:00am
-              Paso por: 
-              - Cento
-              - Norte
-              - Kennedy
-              - Plaza Lagos
-              Precio: $2.00
-              4 cupo disponible`,
-        phone : '593994563180'
-      },
-      {
-        id: 4,
-        name_owner: "Maria Fernandez",
-        image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
-        price: 1.75,
-        model: 'Honda Civic',
-        quotas: 5,
-        destiny: ['Sauces', 'Alborada', 'Urdesa', 'Mall del Sol'],
-        note: `Mañana salgo para la ESPOL para entrada de las 7:00am
-              Paso por: 
-              - Sauces
-              - Alborada
-              - Urdesa
-              - Mall del Sol
-              Precio: $1.70
-              4 cupo disponible`,
-        phone : '593994563180'
-      },
-  ]
+  public  mensajeUsuario :string='';
+  public  countReservations : number = 0;
+  public carpools : CarpoolData[] = []
 
 
-  constructor(private router : Router, private modalController: ModalController) {
+  constructor(private router : Router, private modalController: ModalController,private carpoolService : CarpoolService) {
+    this.carpools = this.carpoolService.getCarpools();
+    this.countReservations = this.carpoolService.getReservationsCarpool().length;
     addIcons(allIcons)
   }
 
@@ -110,5 +45,41 @@ export class Tab1Page {
     });
     return await modal.present();
   }
+  
+
+  public reservarCarpool(carpool: CarpoolData,message:string){
+      this.openChatWhatsAppCarpooolApp(carpool.phone,message)
+     
+      this.carpoolService.reservation(carpool)
+      this.countReservations = this.carpoolService.getReservationsCarpool().length;
+  }
+
+  async openMessageModal(carpool:CarpoolData){
+    const modal = await this.modalController.create({
+      component: MesssageDetailsComponent,
+    });
+    modal.present();
+
+    const { data, role } = await modal.onWillDismiss();
+
+    if (role === 'confirm') {
+      this.mensajeUsuario = data;
+      this.reservarCarpool(carpool,data)      
+    }
+
+    if(role == 'cancel'){
+      console.log("Hello cancel")
+    }
+
+
+  }
+
+  openChatWhatsAppCarpooolApp(phoneNumber: string,message: string){
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+
+  
+ 
 
 }
