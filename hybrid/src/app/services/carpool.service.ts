@@ -50,7 +50,7 @@ export class CarpoolService {
           image_car: 'https://i.pinimg.com/564x/c7/2f/4d/c72f4dcee3fa271ffbe5326fd1a4f70b.jpg',
           price: 2,
           model: 'Toyota Corolla',
-          quotas: 3,
+          quotas: 2,
           destiny: ['Centro', 'Norte', 'Kennedy', 'Plaza Lagos'],
           note: `Mañana salgo para la ESPOL para entrada de las 7:00am
                 Paso por: 
@@ -91,8 +91,17 @@ export class CarpoolService {
   }
 
   reservation(carpool:CarpoolData)  {
-    
-    this.carpoolReservation.push(this.carpoolDataToCarpoolDataReservation(carpool));
+
+      const carpoolIndex  = this.carpools.findIndex(c=> c.id === carpool.id)
+
+      if(carpool.quotas > 0 ){
+          carpool.quotas--;
+          this.carpools[carpoolIndex] = carpool;;
+          this.carpoolReservation.push(this.carpoolDataToCarpoolDataReservation(carpool));
+      }else {
+         console.error("Carpool  not found")
+      }
+   
   }
 
   getReservationsCarpool(){
@@ -100,7 +109,20 @@ export class CarpoolService {
   }
 
   deleteReservationById(id: number){
-    this.carpoolReservation = this.carpoolReservation.filter(reservation => reservation.id !== id);
+   
+   const reservationToDelete = this.carpoolReservation.find(reservation => reservation.id === id);
+   if (reservationToDelete) {
+       this.carpoolReservation = this.carpoolReservation.filter(reservation => reservation.id !== id);
+       this.carpools.forEach(carpool => {
+           if (carpool.id === reservationToDelete.id) {
+               carpool.quotas++;
+           }
+       });
+   } else {
+       console.error('Reserva no encontrada.');
+   }
+   
+   
   
   }
 

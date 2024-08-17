@@ -15,18 +15,25 @@
     </ion-card-header>
     <ion-card-content>
       <p>Precio: {{ carpool.price.toFixed(2) }}</p>
-      <p>Cupos: {{ carpool.quotas }}</p>
+      @if(carpool.quotas>0){
+        <p>Cupos: {{ carpool.quotas }}</p>
+      }
+      @else{
+        <p style="color: red; font-weight:bold;">No hay cupos</p>
+      }
       <p>Destino: {{ carpool.destiny.join(', ') }}</p>
       <p>Teléfono: {{ carpool.phone }}</p>
       <p>Notas: {{ carpool.note }}</p>
     </ion-card-content>
 
-    <div class="center-buton">
-      <ion-button (click)="canDismiss()" shape="round" color="success" >
-        <ion-icon name="car-outline"></ion-icon>
-        Reservar
-      </ion-button>
-    </div>
+    @if(carpool.quotas>0){
+      <div class="center-buton">
+        <ion-button (click)="canDismiss()" shape="round" color="success" >
+          <ion-icon name="car-outline"></ion-icon>
+          Reservar
+        </ion-button>
+      </div>
+    }
   </ion-card>
 
 

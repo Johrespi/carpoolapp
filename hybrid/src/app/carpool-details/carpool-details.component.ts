@@ -26,6 +26,8 @@ export class CarpoolDetailsComponent {
     phone: ''
   };
 
+  @Input() parentPage!: Tab1Page;
+
   constructor(private modalController: ModalController,private actionSheetCtrl:ActionSheetController,private carpoolService : CarpoolService){}
 
   closeOverlay() {
@@ -61,8 +63,9 @@ export class CarpoolDetailsComponent {
   };
 
   async reservation(carpool:CarpoolData){
-    openChatWhatsAppCarpooolApp(carpool.phone, `Donde te recojo 👋:`);
+    openChatWhatsAppCarpooolApp(carpool.phone, `Donde deseas que te recoja: `);
     this.carpoolService.reservation(this.carpool)
+    this.parentPage.incrementReservationsToday();
   }
   
 }
