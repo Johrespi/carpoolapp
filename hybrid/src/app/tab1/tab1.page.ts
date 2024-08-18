@@ -13,13 +13,15 @@ import { NavigationExtras } from '@angular/router';
 import { CarpoolService } from '../services/carpool.service';
 import { MesssageDetailsComponent } from '../messsage-details/messsage-details.component';
 import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { buscarPorDestinos } from 'src/util/buscador';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonicModule, ExploreContainerComponent,RouterLink,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonCol,IonLabel,IonList,IonCardContent,IonText, NgIf]
+  imports: [IonicModule, ExploreContainerComponent,RouterLink,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonCol,IonLabel,IonList,IonCardContent,IonText, NgIf, FormsModule]
 })
 export class Tab1Page {
   
@@ -27,6 +29,7 @@ export class Tab1Page {
   public  countReservations : number = 0;
   public carpools : CarpoolData[] = []
   public openSearchBar: boolean = false
+  public searchTerm: string = ''
 
 
   constructor(private router : Router, private modalController: ModalController,private carpoolService : CarpoolService) {
@@ -88,7 +91,12 @@ export class Tab1Page {
     this.openSearchBar = value
   }
 
-  
- 
+  onSearch() {
+    this.carpools = buscarPorDestinos(this.searchTerm, this.carpoolService.getCarpools())
+  }
 
+  removerBuscador() {
+    this.setOpenSearchBar(false)
+    this.carpools = this.carpoolService.getCarpools()
+  }
 }

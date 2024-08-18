@@ -24,7 +24,14 @@
     </ion-title>
 
     
-      <ion-searchbar (ionCancel)="setOpenSearchBar(false)" show-cancel-button="always" placeholder="Buscar por destinos" *ngIf="openSearchBar"></ion-searchbar>    
+    <ion-searchbar 
+      [(ngModel)]="searchTerm"
+      (ionCancel)="removerBuscador()"
+      show-cancel-button="always"
+      placeholder="Buscar por destinos"
+      (keyup.enter)="onSearch()"
+      *ngIf="openSearchBar"
+    ></ion-searchbar>    
   </ion-toolbar>
 </ion-header>
 
