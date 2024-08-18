@@ -15,7 +15,7 @@ import { MesssageDetailsComponent } from '../messsage-details/messsage-details.c
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { buscarPorDestinos } from 'src/util/buscador';
-
+import { AuthenticationService } from '../services/authentication.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -32,13 +32,18 @@ export class Tab1Page {
   public searchTerm: string = ''
 
 
-  constructor(private router : Router, private modalController: ModalController,private carpoolService : CarpoolService) {
+  constructor(private router : Router, private modalController: ModalController,private carpoolService : CarpoolService,private authService:AuthenticationService) {
     this.carpools = this.carpoolService.getCarpools();
     addIcons(allIcons)
   }
 
-  navigateToLandingLogin(){
-    this.router.navigate(['/landing-login']);
+  logoutUserInCarpoolApp(){
+    this.authService.logout().then(()=>{
+      this.router.navigate(['/login'])
+    }).catch((err)=>{
+      console.log(err)
+    })
+    
   }
 
 

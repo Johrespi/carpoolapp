@@ -8,20 +8,27 @@
     src="assets/tortuga-logo.jpeg"
   />
   </div>
-  <form action="">
+  <form [formGroup]="this.loginForm" (ngSubmit)="loginInCarpoolApp()">
     <ion-item>
       <ion-icon name="person-outline" ></ion-icon>
       <ion-input
-        label="Usuario"
+        formControlName="email"
+        type="email"
+        label="Email"
         labelPlacement="stacked"
         [clearInput]="true"
-        placeholder="Ingrese su usuario"
+        placeholder="Ingrese su email"
          >
     </ion-input>
     </ion-item>
     <ion-item>
       <ion-icon name="lock-closed-outline" aria-label="Favorite"></ion-icon>
-      <ion-input type="password" label="Password" labelPlacement="stacked" placeholder="Ingrese su contraseña">
+      <ion-input 
+        formControlName="password" 
+        type="password" 
+        label="Contraseña" 
+        labelPlacement="stacked" 
+        placeholder="Ingrese su contraseña">
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
    
@@ -33,7 +40,7 @@
   </form>
 
   <div id="container-button">
-    <ion-button shape="round" (click) = "navigateToHome()">Iniciar Sesión</ion-button>
+    <ion-button shape="round" (click) ="loginInCarpoolApp()">Iniciar Sesión</ion-button>
   </div>
 
   <ion-fab slot="fixed" vertical="bottom" horizontal="end" >
