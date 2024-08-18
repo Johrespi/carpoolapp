@@ -7,15 +7,17 @@
     </ion-buttons>
 
     <ion-buttons slot="primary" *ngIf="!openSearchBar">
-      <ion-button (click)="navigateToLandingLogin()">
-        <ion-icon name="log-in-outline"></ion-icon>
-      </ion-button>
+      
 
       <ion-button>
         <ion-item>
           <ion-badge color="danger" slot="start">{{this.countReservations}}</ion-badge>
           <ion-icon name="ticket-outline"></ion-icon>
         </ion-item>
+      </ion-button>
+
+      <ion-button (click)="navigateToLandingLogin()">
+        <ion-icon name="log-in-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
 
