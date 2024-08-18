@@ -4,7 +4,13 @@ ion-header {
     font-size: 30px;
     position: relative;
     // margin-right: 10px;
-  } 
+  }
+  ion-title {
+    --background:red;
+    color: white;
+
+    margin-left: -8px;
+  }
 }
 
 ion-content {
