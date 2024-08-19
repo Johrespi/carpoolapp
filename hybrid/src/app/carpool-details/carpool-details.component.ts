@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon, IonCard, IonCardTitle, IonThumbnail, IonCardHeader, IonCardContent, IonText } from '@ionic/angular/standalone';
 import { CarpoolData } from '../interfaces/carpool-data';
-import { ModalController } from '@ionic/angular';
-import { ActionSheetController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular/standalone';
+import { ActionSheetController } from '@ionic/angular/standalone';
 import { CarpoolService } from '../services/carpool.service';
 import { Tab1Page } from '../tab1/tab1.page';
 import openChatWhatsAppCarpooolApp from '../utils/utils';
@@ -11,7 +11,8 @@ import openChatWhatsAppCarpooolApp from '../utils/utils';
   templateUrl: './carpool-details.component.html',
   styleUrls: ['./carpool-details.component.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon, IonCard, IonCardTitle, IonThumbnail, IonCardHeader, IonCardContent, IonText]
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon, IonCard, IonCardTitle, IonThumbnail, IonCardHeader, IonCardContent, IonText],
+  providers: [ModalController]
 })
 export class CarpoolDetailsComponent {
   @Input() carpool: CarpoolData = {

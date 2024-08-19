@@ -2,29 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IonContent, IonHeader, IonTitle, IonToolbar ,IonItem,IonInput,IonIcon,IonInputPasswordToggle,IonButton,IonFab,IonFabButton} from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar ,IonItem,IonInput,IonIcon,IonInputPasswordToggle,IonButton,IonFab,IonFabButton,IonFooter} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as allIcons from 'ionicons/icons';
 import { AuthenticationService } from '../services/authentication.service';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonItem,IonInput,IonIcon,IonInputPasswordToggle,IonButton,IonFab,IonFabButton,ReactiveFormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonItem,IonInput,IonIcon,IonInputPasswordToggle,IonButton,IonFab,IonFabButton,ReactiveFormsModule,IonFooter]
 })
 export class LoginPage implements OnInit {
 
   loginForm! : FormGroup
 
-  constructor(private router:Router,private fb:FormBuilder,private authenticationService:AuthenticationService) { 
+  constructor(private router:Router,private fb:FormBuilder,private authenticationService:AuthenticationService) {
     addIcons(allIcons)
   }
 
+  
   ngOnInit() {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],

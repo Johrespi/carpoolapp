@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {ModalController} from '@ionic/angular';
+import {ModalController} from '@ionic/angular/standalone';
 import { IonHeader, IonToolbar, IonTitle, IonContent ,IonButton,IonButtons,IonItem,IonInput, IonTextarea, IonText, IonTabButton, IonIcon } from '@ionic/angular/standalone';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController } from '@ionic/angular/standalone';
 @Component({
   selector: 'app-messsage-details',
   templateUrl: './messsage-details.component.html',
   styleUrls: ['./messsage-details.component.scss'],
   standalone: true,
-  imports: [IonIcon, IonTabButton, IonText, IonTextarea, IonHeader, IonToolbar, IonContent,IonTitle,IonButton, IonButtons,IonItem,IonInput,FormsModule,FormsModule]
+  imports: [IonIcon, IonTabButton, IonText, IonTextarea, IonHeader, IonToolbar, IonContent,IonTitle,IonButton, IonButtons,IonItem,IonInput,FormsModule,FormsModule],
+  providers : [ModalController]
 })
 export class MesssageDetailsComponent  implements OnInit {
 

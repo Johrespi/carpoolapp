@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent ,IonButton,IonButtons,IonIcon,IonBadge,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonRow,IonCol,IonLabel,IonList,IonItem,IonCardContent,IonText} from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent ,IonButton,IonButtons,IonIcon,IonBadge,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonRow,IonCol,IonLabel,IonList,IonItem,IonCardContent,IonText,IonSearchbar} from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { RouterLink,Router } from '@angular/router';
 import { addIcons } from 'ionicons';
@@ -7,7 +7,7 @@ import * as allIcons from 'ionicons/icons'
 import { CarpoolData } from '../interfaces/carpool-data';
 import { CameraResultType } from '@capacitor/camera';
 import { CarpoolDetailsComponent } from '../carpool-details/carpool-details.component';
-import { ModalController } from '@ionic/angular';
+ import { ModalController } from '@ionic/angular/standalone';
 import { IonicModule } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
 import { CarpoolService } from '../services/carpool.service';
@@ -21,7 +21,8 @@ import { AuthenticationService } from '../services/authentication.service';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonicModule, ExploreContainerComponent,RouterLink,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonCol,IonLabel,IonList,IonCardContent,IonText, NgIf, FormsModule]
+  imports: [IonicModule, ExploreContainerComponent,RouterLink,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonCol,IonLabel,IonList,IonCardContent,IonText, NgIf, FormsModule,FormsModule],
+  providers: [ModalController,IonSearchbar]
 })
 export class Tab1Page {
   
