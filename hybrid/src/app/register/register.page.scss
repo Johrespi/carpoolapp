@@ -49,6 +49,11 @@ ion-input {
   align-items: center;
 }
 
+ion-fab-button{
+
+  --background: var(--ion-color-secondary);
+}
+
 ion-button {
   --background: var(--ion-color-secondary);
   
