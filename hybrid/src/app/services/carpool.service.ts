@@ -1,14 +1,33 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { CarpoolData ,CarpoolDataReservation} from '../interfaces/carpool-data';
-
+import {Subject} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class CarpoolService {
 
+  private reservationCountSubject = new Subject<number>();
+  reservationCount$ = this.reservationCountSubject.asObservable();
 
+  private count = 0;
+
+  incrementCount() {
+    this.count++;
+    this.reservationCountSubject.next(this.count);
+  }
+
+  decrementCount() {
+    this.count--;
+    this.reservationCountSubject.next(this.count);
+  }
+
+  getCount(): number {
+    return this.count;
+  }
+    
  
+
   public carpools : CarpoolData[] = [
         {
           id: 1,
@@ -83,6 +102,7 @@ export class CarpoolService {
   ]
 
   public carpoolReservation : CarpoolDataReservation[] = []
+ 
 
   constructor() {}
 

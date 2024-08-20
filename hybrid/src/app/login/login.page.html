@@ -18,6 +18,8 @@
         labelPlacement="stacked"
         [clearInput]="true"
         placeholder="Ingrese su email"
+        (ionFocus)="checkFocus()" 
+        (ionBlur)="checkBlur()"
          >
     </ion-input>
     </ion-item>
@@ -28,7 +30,10 @@
         type="password" 
         label="Contraseña" 
         labelPlacement="stacked" 
-        placeholder="Ingrese su contraseña">
+        placeholder="Ingrese su contraseña"
+        (ionFocus)="checkFocus()" 
+        (ionBlur)="checkBlur()"
+        >
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
    
@@ -43,19 +48,20 @@
     <ion-button shape="round" (click) ="loginInCarpoolApp()">Iniciar Sesión</ion-button>
   </div>
   
-<!-- Contenedor de botones fijos -->
-<div class="fixed-buttons">
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button>
-      <ion-icon name="help-outline" color="white"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="start" (click)="navigateToStart()">
-    <ion-fab-button>
-      <ion-icon name="arrow-undo-outline" color="white"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-</div>
+
+    <ion-fab [hidden]="isShown" slot="fixed" vertical="bottom" horizontal="end">
+      <ion-fab-button>
+        <ion-icon name="help-outline" color="white"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  
+    <ion-fab [hidden]="isShown" slot="fixed" vertical="bottom" horizontal="start" (click)="navigateToStart()">
+      <ion-fab-button>
+        <ion-icon name="arrow-undo-outline" color="white"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  
+
 
 </ion-content>

@@ -66,7 +66,7 @@ export class CarpoolDetailsComponent {
   async reservation(carpool:CarpoolData){
     openChatWhatsAppCarpooolApp(carpool.phone, `Donde deseas que te recoja: `);
     this.carpoolService.reservation(this.carpool)
-    this.parentPage.incrementReservationsToday();
+    this.carpoolService.incrementCount()
   }
   
 }

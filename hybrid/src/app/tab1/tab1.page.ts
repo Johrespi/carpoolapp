@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject,OnInit } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent ,IonButton,IonButtons,IonIcon,IonBadge,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonRow,IonCol,IonLabel,IonList,IonItem,IonCardContent,IonText,IonSearchbar} from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { RouterLink,Router } from '@angular/router';
@@ -24,7 +24,7 @@ import { AuthenticationService } from '../services/authentication.service';
   imports: [IonicModule, ExploreContainerComponent,RouterLink,IonCard,IonCardTitle,IonThumbnail,IonCardHeader,IonGrid,IonCol,IonLabel,IonList,IonCardContent,IonText, NgIf, FormsModule,FormsModule],
   providers: [ModalController,IonSearchbar]
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit{
   
   public  mensajeUsuario :string='';
   public  countReservations : number = 0;
@@ -36,6 +36,12 @@ export class Tab1Page {
   constructor(private router : Router, private modalController: ModalController,private carpoolService : CarpoolService,private authService:AuthenticationService) {
     this.carpools = this.carpoolService.getCarpools();
     addIcons(allIcons)
+  }
+
+  ngOnInit(): void {
+    this.carpoolService.reservationCount$.subscribe(
+      count => this.countReservations = count
+    );
   }
 
   logoutUserInCarpoolApp(){
@@ -60,7 +66,8 @@ export class Tab1Page {
   public reservarCarpool(carpool: CarpoolData,message:string){
       this.openChatWhatsAppCarpooolApp(carpool.phone,message)
       this.carpoolService.reservation(carpool)
-      this.countReservations = this.carpoolService.getReservationsCarpool().length;
+      this.carpoolService.incrementCount()
+      this.countReservations = this.carpoolService.getCount()
   }
 
   async openMessageModal(carpool:CarpoolData){
@@ -89,9 +96,11 @@ export class Tab1Page {
   }
 
 
-  incrementReservationsToday(){
+  public incrementReservationsToday(){
     this.countReservations++;
   }
+
+
 
   setOpenSearchBar(value: boolean) {
     this.openSearchBar = value

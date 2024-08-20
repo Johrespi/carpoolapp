@@ -12,12 +12,14 @@ import { Router } from '@angular/router';
 import { CarpoolData, CarpoolDataReservation } from '../interfaces/carpool-data';
 import { CarpoolService } from '../services/carpool.service';
 import { ActionSheetController } from '@ionic/angular';
+import { Tab1Page } from '../tab1/tab1.page';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
   standalone: true,
-  imports: [IonButton, IonTabButton, IonCardSubtitle, IonCardTitle, IonItem, IonSegmentButton, IonLabel, IonSegment, CommonModule, IonFab, IonFabButton, IonIcon, IonImg, IonCol, IonRow, IonGrid, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent,IonCard,IonCardContent,IonCardHeader,IonAvatar,IonList ]
+  imports: [IonButton, IonTabButton, IonCardSubtitle, IonCardTitle, IonItem, IonSegmentButton, IonLabel, IonSegment, CommonModule, IonFab, IonFabButton, IonIcon, IonImg, IonCol, IonRow, IonGrid, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent,IonCard,IonCardContent,IonCardHeader,IonAvatar,IonList ],
+  providers:[Tab1Page]
 })
 
 export class Tab2Page {
@@ -25,9 +27,10 @@ export class Tab2Page {
   public carpoolsReservations : CarpoolDataReservation[] = [];
 
 
-  constructor(private router:Router,private carpoolService:CarpoolService,private actionSheetCtrl : ActionSheetController) {
+  constructor(private router:Router,private carpoolService:CarpoolService,private actionSheetCtrl : ActionSheetController, private tab1 : Tab1Page) {
     addIcons(allIcons)
     this.carpoolsReservations = this.carpoolService.getReservationsCarpool();
+    
     
   }
 
@@ -60,7 +63,8 @@ export class Tab2Page {
 
   deleteReservation(id:number){
     this.carpoolService.deleteReservationById(id);
-    this.carpoolsReservations = this.carpoolService.getReservationsCarpool();
+    this.carpoolsReservations = this.carpoolService.getReservationsCarpool(); 
+    this.carpoolService.decrementCount(); 
     
   }
 

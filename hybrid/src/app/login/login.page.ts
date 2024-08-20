@@ -20,6 +20,17 @@ export class LoginPage implements OnInit {
 
   loginForm! : FormGroup
 
+  
+  isShown = false;
+  
+    checkFocus(){
+      this.isShown = true;
+  }
+
+    checkBlur() {
+        this.isShown = false;
+    }
+
   constructor(private router:Router,private fb:FormBuilder,private authenticationService:AuthenticationService) {
     addIcons(allIcons)
   }
