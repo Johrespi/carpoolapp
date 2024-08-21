@@ -1,5 +1,5 @@
 {
-  "name": "hybrid",
+  "name": "CarpoolApp",
   "integrations": {
     "capacitor": {}
   },
